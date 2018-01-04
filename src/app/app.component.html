@@ -1,0 +1,15 @@
+<input type="file" name="fileImage" (change)="changeImage($event)">
+
+<div *ngIf="imageUrl !== ''" [ngStyle]="styleImage">
+  <angular-cropper [cropperOptions]="configCropperjs" [imageUrl]="imageUrl" #angularCropper></angular-cropper>
+
+  <br>
+
+  <button (click)="onCrop()">CROP!</button>
+</div>
+
+<br>
+
+<div *ngIf="croppedImage !== ''">
+  <img [src]="croppedImage" [ngStyle]="styleImage">
+</div>
